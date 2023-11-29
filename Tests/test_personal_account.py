@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions
 
 class TestPersonalAccount:
 
-    def test_click_personal_account(self, driver, filling_input_fields): # Проверка перехода по клику на «Личный кабинет».
+    def test_click_personal_account(self, driver, filling_input_fields):
 
         driver.find_element(*locators.Locators.button_personal_account).click()
         WebDriverWait(driver, 200).until(expected_conditions.visibility_of_element_located(locators.Locators.button_save_in_personal_account))

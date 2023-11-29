@@ -1,5 +1,4 @@
 import locators
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -33,7 +32,7 @@ class TestAccount:
         assert driver.find_element(*locators.Locators.button_place_order).is_displayed()
 
 
-    def test_login_button_registration(self, driver): # Проверка входа через кнопку в форме регистрации
+    def test_login_button_registration(self, driver):
 
         driver.get(locators.Locators.url_registration_window)
         driver.find_element(*locators.Locators.button_login_in_window_registration).click() # нажать на кнопку войти
@@ -47,11 +46,11 @@ class TestAccount:
         assert driver.find_element(*locators.Locators.button_place_order).is_displayed()
 
 
-    def test_login_button_password_recovery(self, driver):  # Проверка входа через кнопку в форме восстановления пароля.
+    def test_login_button_password_recovery(self, driver):
 
         driver.get(locators.Locators.url_login_window)
-        driver.find_element(*locators.Locators.button_password_recovery).click() # кнопка восстановления пароля
-        driver.find_element(*locators.Locators.button_login_in_window_password_recovery).click() # нажать на кнопку войти
+        driver.find_element(*locators.Locators.button_password_recovery).click()
+        driver.find_element(*locators.Locators.button_login_in_window_password_recovery).click()
 
         WebDriverWait(driver, 200).until(expected_conditions.visibility_of_element_located(locators.Locators.text_login))
         driver.find_element(*locators.Locators.field_input_email_in_window_login).send_keys('RegisteredUser@ya.ru')
