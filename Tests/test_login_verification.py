@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions
 
 
 class TestAccount:
-    def test_login_button_log_in_to_account(self, driver): # Проверка входа по кнопке «Войти в аккаунт» на главной
+    def test_login_button_log_in_to_account(self, driver):
 
         driver.get(locators.Locators.url_home_page)
         driver.find_element(*locators.Locators.button_sign_in_account).click()
